@@ -40,7 +40,7 @@ export default function ScrollTopButton() {
   border border-white/10
   bg-black/[0.04]
   backdrop-blur-2xl
-  text-[#22c55e]
+  text-[rgba(92,252,0,0.67)]
   shadow-[0_0_25px_rgba(34,197,94,0.12)]
   flex items-center justify-center
   transition-all duration-300

@@ -47,10 +47,12 @@ export default function About() {
 >
   <motion.h3
     variants={lineVariants}
-    className="text-xl md:text-2xl lg:text-3xl text-[rgba(92,252,0,0.67)] mb-4 font-semibold text-center md:text-left"
+    className="text-xl md:text-2xl lg:text-3xl text-[rgba(92,252,0,0.67)] mb-4  font-semibold text-center md:text-left"
   >
-    <span className="text-white">Our </span>
-    <span className="text-[rgba(92,252,0,0.67)]">Approach</span>
+    <span className="text-white font-['Rajdhani'] tracking-[3px]">Our </span>
+    <span className="text-[rgba(92,252,0,0.67)] font-['Rajdhani'] tracking-[3px]">
+  Approach
+</span>
   </motion.h3>
 
   <motion.p
@@ -60,7 +62,7 @@ export default function About() {
     We follow a{" "}
     <span className="text-white font-semibold">human-first, innovation-driven</span>{" "}
     approach where advanced technologies like{" "}
-    <span className="text-[rgba(92,252,0,0.67)]">
+    <span className="text-[rgba(92,252,0,0.67)] ">
       AI, robotics, automation, and intelligent systems
     </span>{" "}
     are designed to create real-world impact.
@@ -95,13 +97,13 @@ export default function About() {
     variants={lineVariants}
     className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl tracking-widest font-bold leading-tight"
   >
-    <span className="text-white">ABOUT </span>
-    <span className="text-[rgba(92,252,0,0.67)]">TAKSHION</span>
+    <span className="text-white font-['Rajdhani'] tracking-[3px]">ABOUT </span>
+    <span className="text-[rgba(92,252,0,0.67)] font-['Rajdhani'] tracking-[3px]">TAKSHION</span>
   </motion.h2>
 
   <motion.h3
     variants={lineVariants}
-    className="text-lg md:text-xl lg:text-2xl text-white font-semibold"
+    className="text-lg md:text-xl lg:text-2xl text-white   font-semibold"
   >
     Building Intelligent Systems for the Future
 

@@ -12,26 +12,26 @@ const socials = [
   {
     name: "Instagram",
     icon: <IconBrandInstagram size={20} stroke={1.8} />,
-    link: "https://www.instagram.com/takshion?igsh=MXIzbHVieXlrcjYweg==",
+    link: "#",
     gradient: "from-pink-500 via-fuchsia-500 to-purple-600", // FIXED: typo via-fuchsia-00
   },
   {
     name: "LinkedIn",
     icon: <IconBrandLinkedin size={20} stroke={1.8} />,
-    link: "https://www.linkedin.com/company/takshion-solutions-pvt-ltd/posts/?feedView=all",
+    link: "#",
     gradient: "from-blue-500 via-cyan-500 to-sky-600",
   },
   {
     name: "Facebook",
     icon: <IconBrandFacebook size={20} stroke={1.8} />,
-    link: "https://www.facebook.com/people/Takshion-S/100091750241431/#",
+    link: "#",
     gradient: "from-blue-600 via-indigo-500 to-blue-800",
   },
   {
     name: "Email",
     icon: <IconMail size={20} stroke={1.8} />, // Standardized size/stroke
     gradient: "from-emerald-500 to-green-700",
-    link: "mailto:business@takshion.com",
+    link: "#",
   }
 ];
 

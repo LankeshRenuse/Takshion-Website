@@ -93,7 +93,7 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="font-['Rajdhani'] font-semibold tracking-[2px] fixed top-0 left-0 w-full z-50 bg-[rgba(92,252,0,0.67)]/90 xl:bg-black/70 backdrop-blur-sm border-b border-[rgba(92,252,0,0.67)]/20 xl:border-b-0"
+        className="font-['Rajdhani'] font-semibold tracking-[2px] fixed top-0 left-0 w-full z-50  xl:bg-black/70 backdrop-blur-sm border-b border-[rgba(92,252,0,0.67)]/20 xl:border-b-0"
       >
         {/* UPDATED: items-start aligns everything to the top of the navbar height */}
         <div className="flex justify-between items-start px-5 xl:px-7 py-2 max-w-8xl mx-auto">

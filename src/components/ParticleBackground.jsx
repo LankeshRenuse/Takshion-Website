@@ -153,7 +153,7 @@ export default function ParticleBackground() {
 
         ctx.fillStyle = near
           ? "rgba(143,255,214,1)"
-          : "rgba(30,255,150,0.3)";
+          : "rgba(92, 252, 0, 0.29)";
 
         ctx.fill();
       });

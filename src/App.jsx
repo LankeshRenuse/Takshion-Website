@@ -36,8 +36,14 @@ export default function App() {
     <div className="text-white relative">
 
 
-      {/* ✅ BACKGROUND */}
-      <div className="bg-title">SVELTOZ</div>
+      {/* ✅ BACKGROUND logo */}
+      <div className="bg-title">
+  <img
+    src="/Takshion-logo.png"
+    alt="Takshion Logo"
+    className="h-5 w-10 object-cover opacity-70"
+  />
+</div>
 
 <FloatingSocialBar />
     <ScrollTopButton />
