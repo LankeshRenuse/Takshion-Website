@@ -96,7 +96,7 @@ export default function Contact() {
 
   // --- REALISTIC & PREMIUM ANIMATIONS ---
   
-  // 1. Form Body Container (Rises smoothly first)
+  // 1. Form Body Container 
   const formBodyVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.98 },
     visible: {
