@@ -14,6 +14,7 @@ import BackgroundFX from './components/BackgroundFX'
 import ParticleBackground from './components/ParticleBackground'
 import ScrollTopButton from "./components/ScrollTopButton";
 import FloatingSocialBar from "./components/FloatingSocialBar";
+import ServicesGrid from "./components/ServicesGrid";
 
 export default function App() {
 
@@ -64,6 +65,8 @@ export default function App() {
       <About />
     </div>
 </div>
+
+<ServicesGrid />
 
     
   {/* OTHER SECTIONS */}

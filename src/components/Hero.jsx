@@ -9,8 +9,9 @@ const slides = [
     title: "AI / ML SOLUTIONS",
     subtitle:
       "Artificial Intelligence (AI) and Machine Learning (ML) solutions designed to automate decision-making, predictive analytics, intelligent workflows and advanced business operations. Our systems transform raw data into actionable insights while improving efficiency, accuracy and scalability across industries.",
-    image: "/AI-ML.jpg",
-    bg: "/AI-bg.jpg",
+    image: "/auv-vid.mp4",
+    bg: "/Takshion-vid.mp4",
+    isVideo: true,
   },
 
   {
@@ -65,7 +66,7 @@ const slides = [
     title: "RPAS TECHNOLOGY",
     subtitle:
       "Remotely Piloted Aircraft Systems (RPAS) designed for secure and efficient remote operations. Our RPAS solutions support surveillance, monitoring, inspection, defense and industrial missions with high reliability and operational control.",
-    image: "/rpas.jpg",
+    image: "/RPAS.jpg",
     bg: "/rpas-bg.jpg",
   },
 
@@ -81,8 +82,9 @@ const slides = [
     title: "USV AUV & ROV SYSTEMS",
     subtitle:
       "Unmanned Surface Vehicles (USV), Autonomous Underwater Vehicles (AUV) and Remotely Operated Vehicles (ROV) for maritime security, underwater inspection, ocean research, offshore operations and defense applications.",
-    image: "/marine.jpg",
-    bg: "/marine-bg.jpg",
+    image: "/auv-vid.mp4",
+    isVideo: true,
+    bg: "/auv-vid.mp4",
   },
 
   {
@@ -97,7 +99,7 @@ const slides = [
     title: "AGRICULTURE TECHNOLOGY",
     subtitle:
       "Smart agriculture solutions powered by drones, AI, IoT and data analytics. We help modern farms improve crop monitoring, precision spraying, irrigation management, yield optimization and overall agricultural productivity.",
-    image: "/agri.jpg",
+    image: "/AGRI.jpg",
     bg: "/agri-bg.jpg",
   },
 
@@ -207,11 +209,23 @@ useEffect(() => {
             transition={{ duration: 1.0 }}
             className="absolute inset-0"
           >
-            <img
-              src={slide.bg || slide.image}
-              alt="background"
-              className="w-full h-full object-cover blur-sm opacity-30"
-            />
+           {slide.isVideo ? (
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover blur-sm opacity-30"
+  >
+    <source src={slide.bg || slide.image} type="video/mp4" />
+  </video>
+) : (
+  <img
+    src={slide.bg || slide.image}
+    alt="background"
+    className="w-full h-full object-cover blur-sm opacity-30"
+  />
+)}
             <div className="absolute inset-0 bg-gradient-to-b from-[#010712]/40 via-black/40 to-black" />
           </motion.div>
         </AnimatePresence>
@@ -324,11 +338,23 @@ useEffect(() => {
 
               {/* FRAME */}
               <div className="relative w-full max-w-[570px] overflow-hidden rounded-[20px] border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="h-[300px] sm:h-[360px] md:h-[410px] w-full object-cover"
-                />
+                {slide.isVideo ? (
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="h-[300px] sm:h-[360px] md:h-[410px] w-full object-cover"
+  >
+    <source src={slide.image} type="video/mp4" />
+  </video>
+) : (
+  <img
+    src={slide.image}
+    alt={slide.title}
+    className="h-[300px] sm:h-[360px] md:h-[410px] w-full object-cover"
+  />
+)}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
               </div>
             </motion.div>

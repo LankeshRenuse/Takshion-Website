@@ -68,7 +68,7 @@ const services = [
   },
   {
     title: "UAV & UAS SYSTEMS",
-    img: "/uav.jpg",
+    img: "/auv.jpg",
     desc: "Unmanned Aerial Vehicle and System solutions for reconnaissance, mapping, surveillance, and industrial inspection operations.",
     features: ["Reconnaissance", "Mapping", "Inspection", "Surveillance"],
   },
@@ -91,7 +91,8 @@ const services = [
   },
   {
     title: "USV AUV & ROV SYSTEMS",
-    img: "/marine.jpg",
+     img: "/auv-vid.mp4",
+  isVideo: true,
     desc: "Autonomous surface, underwater, and remotely operated systems for maritime security, underwater mapping, inspection, and ocean research applications.",
     features: [
       "Underwater Mapping",
@@ -113,7 +114,7 @@ const services = [
   },
   {
     title: "AGRICULTURE TECHNOLOGY",
-    img: "/agri.jpg",
+    img: "/AGRI.jpg",
     desc: "Smart agriculture solutions including precision farming, crop analytics, drone-based spraying, and AI-driven yield prediction systems.",
     features: [
       "Precision Farming",
@@ -188,19 +189,43 @@ const cardVariants = {
 };
 
 /* CARD COMPONENT WITH IMAGE */
-const Card = ({ title, features, img }) => (
+const Card = ({ title, features, img, desc }) => (
   <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-800/55 via-[#02050a]/55 to-black backdrop-blur-2xl border border-[rgba(92,252,0,0.67)]/20 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[rgba(92,252,0,0.67)]/40 hover:shadow-[0_0_60px_rgba(92,252,0,0.18)] group h-full w-[78vw] sm:w-[290px] md:w-[340px] lg:w-[380px]">
-    <div className="w-full h-48 overflow-hidden border-b border-[rgba(92,252,0,0.67)]/20">
-      <img
-        src={img}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
+
+   <div className="w-full h-48 overflow-hidden border-b border-[rgba(92,252,0,0.67)]/20">
+
+  {img.endsWith(".mp4") ? (
+    <video
+      autoPlay
+      muted
+      loop
+      playsInline
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    >
+      <source src={img} type="video/mp4" />
+    </video>
+  ) : (
+    <img
+      src={img}
+      alt={title}
+      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+    />
+  )}
+
+</div>
+
     <div className="p-8 text-left relative">
-      <h3 className="text-xl font-semibold mb-6 text-white tracking-wide">
+      <h3 className="text-xl font-semibold mb-3 text-white tracking-wide">
         <span className="text-[rgba(92,252,0,0.67)]">{title}</span>
       </h3>
+
+      {/* ✅ ADD DESCRIPTION */}
+      {desc && (
+        <p className="text-sm text-gray-400 mb-5">
+          {desc}
+        </p>
+      )}
+
       <div className="space-y-3">
         {features.map((item, i) => (
           <div
@@ -215,7 +240,6 @@ const Card = ({ title, features, img }) => (
     </div>
   </div>
 );
-
 export default function Services() {
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -318,11 +342,12 @@ export default function Services() {
       className="flex-shrink-0"
       variants={cardVariants}
     >
-      <Card
-        title={service.title}
-        features={service.features}
-        img={service.img}
-      />
+  <Card
+  title={service.title}
+  features={service.features}
+  img={service.img}
+  desc={service.desc}
+/>
     </motion.div>
   ))}
 </motion.div>
