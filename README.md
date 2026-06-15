@@ -1,6 +1,7 @@
-# 🚀 Takshion Website
+Takshion Mechatronics Private Limited
 
-Modern futuristic website built with React, Vite, and Tailwind CSS.
+Innovating the future through Artificial Intelligence, Robotics, Drone Technology, Computer Vision, 
+Industrial Automation, and Intelligent Surveillance Systems.
 
 ## ✨ Features
 
