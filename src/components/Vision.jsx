@@ -30,7 +30,7 @@ export default function Vision() {
         {/* LEFT GLASS CARD (Staggered Text) */}
         <div className="w-full md:w-1/2">
           <motion.div 
-            className="bg-black/1 backdrop-blur-lg border border-[rgba(92,252,0,0.67)]/20 rounded-2xl p-8 shadow-xl glow-target"
+  className="bg-black/1 backdrop-blur-lg border border-[rgba(92,252,0,0.67)]/20 rounded-2xl p-8 shadow-xl glow-target text-justify"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -41,31 +41,31 @@ export default function Vision() {
               VISION
             </motion.h2>
 
-            <motion.ul className="space-y-4 text-gray-300 leading-relaxed">
+            <motion.ul className="space-y-4 text-gray-300 leading-7 text-justify">
               <motion.li variants={lineVariants} className="flex gap-3 items-start">
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">▸</span>
-                <span>
+               <span className="leading-7">
                 We believe technology should solve real problems and create real value.
                 </span>
               </motion.li>
 
               <motion.li variants={lineVariants} className="flex gap-3 items-start">
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">▸</span>
-                <span>
+               <span className="leading-7">
                 Our vision is to build reliable autonomous systems that make industries safer, smarter, and more efficient.
                 </span>
               </motion.li>
 
               <motion.li variants={lineVariants} className="flex gap-3 items-start">
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">▸</span>
-                <span>
+                <span className="leading-7">
                We are committed to turning innovative ideas into practical solutions through engineering, research, and continuous improvement.
                 </span>
               </motion.li>
 
               <motion.li variants={lineVariants} className="flex gap-3 items-start">
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">▸</span>
-                <span>
+               <span className="leading-7">
                 As we grow, we aim to contribute to a future where drones, robotics, and AI become trusted tools for progress.
                 </span>
               </motion.li>

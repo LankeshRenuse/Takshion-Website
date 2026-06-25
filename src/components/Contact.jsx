@@ -252,76 +252,50 @@ export default function Contact() {
         
        {/* LEFT SIDE */}
 <motion.div
-  className="space-y-8 mt-24 order-2 md:order-1"
+  className="space-y-6 mt-12 md:mt-20 order-2 md:order-1"
   variants={leftContainerVariants}
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true, amount: 0.2 }}
 >
-          {/* ITEM 1: HEAD OFFICE */}
-          <div>
-            <motion.p
-              variants={leftItemVariants}
-              className="text-[rgba(92,252,0,0.67)] uppercase text-sm mb-1"
-            >
-                Address
-            </motion.p>
-            <motion.h3
-              variants={leftItemVariants}
-              className="text-lg md:text-xl font-semibold text-white"
-            >
-              Takshion Mechatronics Pvt. Ltd.
-            </motion.h3>
-          <motion.p
-  variants={leftItemVariants}
-  className="text-gray-300 mt-2 leading-relaxed flex flex-col items-center md:items-start"
->
-  {/* This wrapper keeps the block tidy and aligned */}
-  <span className="w-fit text-center md:text-left">
-    <span className="block">1004, Kingsbury, Charholi Khurd,</span>
-    <span className="block">Taluka Khed, District Pune,</span>
-    <span className="block">Maharashtra – 412105.</span>
-  </span>
-</motion.p>
+  <div>
+    <motion.p
+      variants={leftItemVariants}
+      className="text-[rgba(92,252,0,0.67)] uppercase text-sm mb-1"
+    >
+      Address
+    </motion.p>
 
-        {/* Email Icon */}
-<motion.div
-  variants={leftItemVariants}
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-  viewport={{ once: true }}
-  className="mt-6"
->
-  <div className="flex items-center gap-3 text-gray-400">
-    <Mail className="w-5 h-5 text-[rgba(92,252,0,0.67)] flex-shrink-0" />
+    <motion.h3
+      variants={leftItemVariants}
+      className="text-lg md:text-xl font-semibold text-white"
+    >
+      Takshion Mechatronics Pvt. Ltd.
+    </motion.h3>
 
-    <motion.a
+    <motion.p
+      variants={leftItemVariants}
+      className="text-gray-300 mt-2 leading-7 text-justify max-w-sm"
+    >
+      1004, Kingsbury, Charholi Khurd, Taluka Khed,
+      District Pune, Maharashtra – 412105, India
+    </motion.p>
+  </div>
+
+  <motion.div
+    variants={leftItemVariants}
+    className="flex items-center gap-3"
+  >
+    <Mail className="w-5 h-5 text-[rgba(92,252,0,0.67)]" />
+
+    <a
       href="mailto:info@takshion.com"
-      whileHover={{
-        x: 5,
-        color: "rgba(92,252,0,0.9)",
-      }}
-      transition={{ duration: 0.3 }}
-      className="
-        text-sm md:text-base
-        font-light
-        tracking-wide
-        text-gray-500
-        hover:text-[rgba(92,252,0,0.9)]
-        transition-colors duration-300
-      "
+      className="text-gray-400 hover:text-[rgba(92,252,0,0.9)] transition-colors"
     >
       info@takshion.com
-    </motion.a>
-  </div>
+    </a>
+  </motion.div>
 </motion.div>
-          </div>
-
-        
-        </motion.div>
-
-
       {/* RIGHT SIDE: CONTACT FORM */}
 <div className="flex justify-center order-1 md:order-2">
           <motion.div

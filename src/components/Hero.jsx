@@ -355,7 +355,8 @@ export default function Hero() {
               <div className="h-[2px] w-[130px] rounded-full mt-5 sm:mt-6 mx-auto sm:mx-0 bg-gradient-to-r from-[#95E60E] to-[rgba(92,252,0,0.67)]" />
 
               {/* Subtitle */}
-              <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-white/70 max-w-2xl leading-relaxed text-center sm:text-left">
+              <p className="mt-5 sm:mt-6 text-sm sm:text-base md:text-lg text-white/70 max-w-2xl leading-relaxed text-center sm:text-left   text-justify
+    sm:text-justify">
                 {slide.subtitle}
               </p>
               {current === 0 && (

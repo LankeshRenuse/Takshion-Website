@@ -71,40 +71,40 @@ export default function About() {
               Building Intelligent Systems for the Future
             </motion.h3>
 
-            <motion.p
-              variants={lineVariants}
-              className="text-gray-300 leading-relaxed mb-5 text-base md:text-lg"
-            >
-              The innovative drones and robotics startup backed by
-              <span style={{ color: accentColor }}>
-                {" "}17+ years of industrial experience
-              </span>,
-              delivering next-generation autonomous technologies.
-            </motion.p>
+           <motion.p
+  variants={lineVariants}
+  className="text-gray-300 leading-relaxed mb-5 text-base md:text-lg text-justify text-left"
+>
+  The innovative drones and robotics startup backed by
+  <span style={{ color: accentColor }}>
+    {" "}17+ years of industrial experience
+  </span>,
+  delivering next-generation autonomous technologies.
+</motion.p>
 
-            <motion.p
-              variants={lineVariants}
-              className="text-gray-300 leading-relaxed mb-5 text-base md:text-lg"
-            >
-              <span className="text-white font-semibold">
-                Takshion
-              </span>{" "}
-              designs and develops intelligent autonomous platforms including
-              <span style={{ color: accentColor }}>
-                {" "}UAVs, UGVs and UUVs
-              </span>,
-              with expertise in
-              <span style={{ color: accentColor }}>
-                {" "}AI/ML, IoT, Deep Learning, Computer Vision and GenAI.
-              </span>
-            </motion.p>
+<motion.p
+  variants={lineVariants}
+  className="text-gray-300 leading-relaxed mb-5 text-base md:text-lg text-justify text-left"
+>
+  <span className="text-white font-semibold">
+    Takshion
+  </span>{" "}
+  designs and develops intelligent autonomous platforms including
+  <span style={{ color: accentColor }}>
+    {" "}UAVs, UGVs and UUVs
+  </span>,
+  with expertise in
+  <span style={{ color: accentColor }}>
+    {" "}AI/ML, IoT, Deep Learning, Computer Vision and GenAI.
+  </span>
+</motion.p>
 
-            <motion.p
-              variants={lineVariants}
-              className="text-white font-semibold text-base md:text-lg"
-            >
-              A subsidiary alliance of Sveltoz Solutions Pvt. Ltd.
-            </motion.p>
+<motion.p
+  variants={lineVariants}
+  className="text-white font-semibold text-base md:text-lg text-justify text-left"
+>
+  A subsidiary alliance of Sveltoz Solutions Pvt. Ltd.
+</motion.p>
           </motion.div>
         </div>
 

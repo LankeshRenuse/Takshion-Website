@@ -118,9 +118,9 @@ const Card = ({ title, desc, features, image }) => {
         </h3>
 
         {desc && (
-          <p className="text-[16px] pt-2 text-gray-300 mb-3 leading-relaxed">
-            {desc}
-          </p>
+         <p className="text-[16px] pt-2 text-gray-300 mb-3 leading-7 text-justify">
+  {desc}
+</p>
         )}
 
         <div className="space-y-2 pt-2 border-t border-[rgba(92,252,0,0.1)] mt-6">
@@ -202,10 +202,10 @@ export default function Services() {
         <span className="text-[rgba(92,252,0,0.67)]">SERVICES</span>
       </h2>
 
-      <p className="text-gray-400 max-w-4xl mx-auto mb-10">
-        We deliver cutting-edge solutions across AI, Robotics, UAV Systems, IoT,
-        Enterprise Software, and Security Platforms.
-      </p>
+      <p className="text-gray-400 max-w-4xl mx-auto mb-10 text-justify md:text-center">
+  We deliver cutting-edge solutions across AI, Robotics, UAV Systems, IoT,
+  Enterprise Software, and Security Platforms.
+</p>
 
       <div className="relative w-full max-w-[1300px] mx-auto flex items-center">
 
