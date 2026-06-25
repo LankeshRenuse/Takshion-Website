@@ -252,7 +252,8 @@ export default function Contact() {
         
        {/* LEFT SIDE */}
 <motion.div
-  className="space-y-6 mt-12 md:mt-20 order-2 md:order-1"
+ 
+  className="space-y-6 mt-6 md:mt-20 order-2 md:order-1 text-center md:text-left"
   variants={leftContainerVariants}
   initial="hidden"
   whileInView="visible"
@@ -270,27 +271,28 @@ export default function Contact() {
       variants={leftItemVariants}
       className="text-lg md:text-xl font-semibold text-white"
     >
-      Takshion Mechatronics Pvt. Ltd.
+      Takshion  Pvt. Ltd.
     </motion.h3>
 
     <motion.p
       variants={leftItemVariants}
-      className="text-gray-300 mt-2 leading-7 text-justify max-w-sm"
+     className="text-gray-300 mt-2 leading-7 max-w-sm mx-auto md:mx-0 text-center md:text-justify"
     >
-      1004, Kingsbury, Charholi Khurd, Taluka Khed,
-      District Pune, Maharashtra – 412105, India
+      1004, Kingsbury, Charholi Khurd, <br></br>
+      Taluka Khed,District Pune,<br></br>
+       Maharashtra – 412105, India
     </motion.p>
   </div>
 
-  <motion.div
-    variants={leftItemVariants}
-    className="flex items-center gap-3"
-  >
+<motion.div
+  variants={leftItemVariants}
+  className="flex items-center justify-center md:justify-start gap-3"
+>
     <Mail className="w-5 h-5 text-[rgba(92,252,0,0.67)]" />
 
     <a
       href="mailto:info@takshion.com"
-      className="text-gray-400 hover:text-[rgba(92,252,0,0.9)] transition-colors"
+    className="text-gray-500 hover:text-[rgba(92,252,0,0.9)] transition-colors text-center md:text-left"
     >
       info@takshion.com
     </a>

@@ -24,7 +24,7 @@ export default function Vision() {
   };
 
   return (
-    <section id="vision" className="py-12  px-4 scroll-mt-[60px]">
+    <section id="vision" className="py-12  px-4 scroll-mt-[30px]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
         {/* LEFT GLASS CARD (Staggered Text) */}

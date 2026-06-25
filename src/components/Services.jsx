@@ -37,7 +37,7 @@ const services = [
   {
     title: "ROBOTICS & AUTOMATION",
     image: "/img/robot.webp",
-    desc: "Leveraging autonomous mobility, machine perception, RFID-enabled asset intelligence, & AI-powered navigation support, our solutions deliver operational awareness in logistics support & transformation across enterprise environments.",
+    desc: "Leveraging autonomous mobility, machine perception, RFID intelligence, and AI-powered navigation to deliver operational awareness and logistics transformation.",
     features: ["Industrial Robotics", "AI Automation", "Machine Vision", "Process Control"],
   },
   {
@@ -118,7 +118,7 @@ const Card = ({ title, desc, features, image }) => {
         </h3>
 
         {desc && (
-         <p className="text-[16px] pt-2 text-gray-300 mb-3 leading-7 text-justify">
+  <p className="text-[16px] pt-2 text-gray-300 mb-3 leading-normal text-left">
   {desc}
 </p>
         )}

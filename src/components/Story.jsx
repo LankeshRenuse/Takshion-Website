@@ -24,7 +24,7 @@ export default function Story() {
   };
 
   return (
-    <section id="story" className="py-16 px-4 relative scroll-mt-[40px]">
+    <section id="story" className="py-16 px-4 relative scroll-mt-[-40px]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
         {/* LEFT IMAGE: REALISTIC, SLOW 3D SLIDE-IN */}
         <div className="w-full md:w-1/2 flex justify-center relative overflow-hidden md:overflow-visible px-2">
