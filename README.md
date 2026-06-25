@@ -31,6 +31,4 @@ npm run dev
 npm run build
 ```
 
-## 👨‍💻 Developed By
 
-Takshion Solutions Pvt. Ltd.
