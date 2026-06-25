@@ -36,12 +36,13 @@ export default function About() {
       id="about"
       className="py-12 px-4 scroll-mt-[60px]"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className=" max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
 
         {/* LEFT CARD */}
-        <div className=" glow-target w-full  lg:w-1/2">
+        <div className=" w-full  lg:w-1/2">
           <motion.div
             className="
+            glow-target
               bg-black/1
               backdrop-blur-lg
               border border-[rgba(92,252,0,0.2)]
