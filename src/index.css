@@ -732,4 +732,3 @@ li span[class*="text-[rgba(92,252,0,0.67)]"] {
   display: inline-block; /* Required for transforms to behave correctly on inline elements */
   transform: none !important;
 }
-

@@ -265,7 +265,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative lg:min-h-screen overflow-hidden flex items-center justify-center bg-black touch-pan-y"
+      className="relative min-h-[100svh] lg:min-h-screen overflow-hidden flex items-center justify-center bg-black touch-pan-y"
       onTouchStart={(e) => (window.touchStartX = e.touches[0].clientX)}
       onTouchEnd={(e) => {
         const endX = e.changedTouches[0].clientX;
@@ -298,7 +298,7 @@ export default function Hero() {
                 muted
                 loop
                 playsInline
-                className="w-full h-full object-cover blur-sm opacity-30"
+                className="w-full h-full object-cover object-center scale-105 blur-sm opacity-30"
               >
                 <source src={slide.bg || slide.image} type="video/mp4" />
               </video>
@@ -306,7 +306,7 @@ export default function Hero() {
               <img
                 src={slide.bg || slide.image}
                 alt="background"
-                className="w-full h-full object-cover blur-sm opacity-40"
+                className="w-full h-full object-cover object-center scale-105 blur-sm opacity-40"
               />
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-[#010712]/40 via-black/40 to-black" />
@@ -319,9 +319,9 @@ export default function Hero() {
       </div>
 
       {/* MAIN CONTENT LAYOUT CONTAINER */}
-      <div className="relative z-[5] w-full max-w-[1370px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 py-10 sm:py-12 md:py-14 lg:py-4 grid grid-cols-1 lg:grid-cols-2 gap-7 sm:gap-8 md:gap-10 lg:gap-6 items-center lg:text-left lg:pl-20 xl:pl-16">
+      <div className="relative z-[5] w-full max-w-[1370px] xl:max-w-[1480px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-5 md:px-6 lg:px-8 xl:px-10 2xl:px-12 py-10 sm:py-12 md:py-14 lg:py-4 lg:translate-x-1 xl:translate-x-4 2xl:translate-x-6 grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-7 sm:gap-8 md:gap-10 lg:gap-4 xl:gap-6 2xl:gap-8 items-center lg:text-left">
         {/* LEFT CONTENT COLUMN */}
-        <div className="flex flex-col justify-center min-h-0 md:min-h-[500px] mt-14 md:mt-8 lg:mt-24 lg:-ml-0 xl:-ml-8 2xl:-ml-12">
+        <div className="flex flex-col justify-center min-h-0 md:min-h-[500px] mt-14 md:mt-8 lg:mt-24 lg:pr-2 xl:pr-4 2xl:pr-6">
    <div className="mb-4 sm:mb-5">
   <span
     className="block uppercase text-sm font-semibold tracking-[2px]"
@@ -341,12 +341,12 @@ export default function Hero() {
               {/* title */}
               <h1 className="leading-tight max-w-[900px] text-center sm:text-left">
                 {/* FIRST LINE */}
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-4xl  font-bold text-white/90">
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold text-white/90">
                   {slide.title.split(" ").slice(0, -1).join(" ")}
                 </span>
 
                 {/* LAST WORD GREEN */}
-                <span className="block mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold  text-[rgba(92,252,0,0.67)] ">
+                <span className="block mt-2 text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-bold text-[rgba(92,252,0,0.67)] ">
                   {slide.title.split(" ").slice(-1)}
                 </span>
               </h1>
@@ -414,7 +414,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center lg:items-start">
+        <div className="flex flex-col items-center">
           <AnimatePresence mode="wait">
             <motion.div
               key={slide.image}
@@ -427,20 +427,20 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="relative flex w-full max-w-[420px] sm:max-w-[520px] md:max-w-none flex-col items-center justify-center mt-1 sm:mt-2 md:mt-6 lg:justify-start lg:ml-0 lg:mt-[80px] xl:ml-[42px] xl:mt-[100px] 2xl:ml-[42px] 2xl:mt-[110px]"
+              className="relative flex w-full max-w-[420px] sm:max-w-[520px] md:max-w-none lg:max-w-[500px] xl:max-w-[540px] 2xl:max-w-[580px] flex-col items-center justify-center mt-1 sm:mt-2 md:mt-6 lg:justify-start lg:ml-0 lg:mt-[80px] xl:mt-[88px] 2xl:mt-[96px]"
             >
               {/* GLOWS - These will now move/animate with the frame */}
               <div className="absolute -inset-1 sm:-inset-2 md:-inset-2 bg-[rgba(92,252,0,0.67)]/25 sm:bg-[rgba(92,252,0,0.67)]/30 blur-[45px] sm:blur-[70px] md:blur-[80px] rounded-full " />
 
               {/* FRAME */}
-              <div className="relative md:-mt-10 w-full max-w-[570px] overflow-hidden rounded-[20px] border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
+              <div className="relative md:-mt-10 w-full max-w-[570px] lg:max-w-[500px] xl:max-w-[540px] 2xl:max-w-[580px] overflow-hidden rounded-[20px] border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
                 {slide.isVideo ? (
                   <video
                     autoPlay
                     muted
                     loop
                     playsInline
-                    className="h-[300px] sm:h-[360px] md:h-[410px] w-full object-cover"
+                    className="h-[300px] sm:h-[360px] md:h-[410px] lg:h-[360px] xl:h-[390px] 2xl:h-[420px] w-full object-cover object-center"
                   >
                     <source src={slide.image} type="video/mp4" />
                   </video>
@@ -448,7 +448,7 @@ export default function Hero() {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="h-[300px] sm:h-[360px] md:h-[410px] w-full object-cover"
+                    className="h-[300px] sm:h-[360px] md:h-[410px] lg:h-[360px] xl:h-[390px] 2xl:h-[420px] w-full object-cover object-center"
                   />
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
@@ -457,7 +457,8 @@ export default function Hero() {
           </AnimatePresence>
 
           {/* Slider Dots Below Image */}
-          <div className="flex justify-center lg:justify-start lg:ml-[20px] xl:ml-[100px] 2xl:ml-[280px] gap-3 mt-5 sm:mt-6 w-full lg:w-auto">
+    {/* Slider Dots Below Image */}
+<div className="flex justify-center gap-3 mt-5 sm:mt-6 w-full max-w-[570px] lg:max-w-[500px] xl:max-w-[540px] 2xl:max-w-[580px] mx-auto">
             {slides.map((_, index) => (
               <button
                 key={index}
