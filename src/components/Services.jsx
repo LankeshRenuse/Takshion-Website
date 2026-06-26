@@ -11,7 +11,7 @@ const services = [
     features: ["Custom UAVs Design", " Customized Payload Systems", "Autonomous Navigation", "Crash & Analyze Log"],
   },
   {
-    title: "AIML SOLUTIONS",
+    title: "AI ML SOLUTIONS",
     image: "/img/AI-ML.webp",
     desc: "We build AI-powered systems that transform raw data into actionable insights through deep learning, intelligent algorithms, and real-time analytics.",
     features: ["Predictive Analytics", "Intelligent Automation", "Deep Learning", "Data Insights"],

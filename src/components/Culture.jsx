@@ -203,7 +203,7 @@ export default function Culture() {
               whileHover={{
                 scale: 1.02,
                 rotateY: -2, // Tilts slightly back when hovered
-                boxShadow: "0 40px 80px rgba(34,197,94,0.15)",
+                boxShadow: "0 40px 80px rgba(92,252,0,0.2) ",
                 transition: { duration: 1, ease: "easeOut" },
               }}
             >

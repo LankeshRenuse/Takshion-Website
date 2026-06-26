@@ -304,10 +304,13 @@ export default function Hero() {
               </video>
             ) : (
               <img
-                src={slide.bg || slide.image}
-                alt="background"
-                className="w-full h-full object-cover object-center scale-105 blur-sm opacity-40"
-              />
+  src={slide.bg || slide.image}
+  alt=""
+  loading="lazy"
+  decoding="async"
+  fetchPriority="low"
+  className="w-full h-full object-cover object-center scale-105 blur-sm opacity-40"
+/>
             )}
             <div className="absolute inset-0 bg-gradient-to-b from-[#010712]/40 via-black/40 to-black" />
           </motion.div>
@@ -446,9 +449,12 @@ export default function Hero() {
                     <source src={slide.image} type="video/mp4" />
                   </video>
                 ) : (
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
+                <img
+    src={slide.image}
+    alt={slide.title}
+    loading="eager"
+    fetchPriority="high"
+    decoding="async"
                     className="h-[300px] sm:h-[360px] md:h-[410px] lg:h-[360px] xl:h-[390px] 2xl:h-[420px] w-full object-cover object-center"
                   />
                 )}
