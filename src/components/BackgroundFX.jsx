@@ -29,13 +29,13 @@ export default function BackgroundFX() {
       style={{
   backgroundImage: `
     linear-gradient(
-      rgba(0, 255, 157, 0.03) 0.0525rem,
+      rgba(0, 255, 157, 0.04) 0.0525rem,
       transparent 0.0525rem
     ),
 
     linear-gradient(
       90deg,
-      rgba(0, 255, 157, 0.03) 0.0525rem,
+      rgba(0, 255, 157, 0.04) 0.0525rem,
       transparent 0.0525rem
     )
   `,
