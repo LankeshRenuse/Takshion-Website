@@ -26,7 +26,7 @@ export default function Mission() {
   return (
     <section
       id="mission"
-      className="py-16 px-4   glow-card scroll-mt-[-40px]"
+      className="py-16 px-4  bg-cover bg-center glow-card scroll-mt-[-40px]"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
