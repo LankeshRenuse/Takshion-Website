@@ -16,9 +16,15 @@ export default function ParticleBackground() {
       y: window.innerHeight / 2
     };
 
+    let mouseRafPending = false;
     const moveMouse = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      if (mouseRafPending) return;
+      mouseRafPending = true;
+      requestAnimationFrame(() => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouseRafPending = false;
+      });
     };
 
     window.addEventListener("mousemove", moveMouse);
@@ -86,7 +92,7 @@ export default function ParticleBackground() {
 
       ctx.scale(dpr, dpr);
 
-      const count = 120;
+      const count = 50;
 
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * width,

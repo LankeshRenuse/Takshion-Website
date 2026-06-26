@@ -25,69 +25,34 @@ export default function Navbar() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
 
-  // --- HANDLE SCROLL HIGHLIGHTING ---
+  // --- HANDLE SCROLL HIGHLIGHTING via IntersectionObserver ---
   useEffect(() => {
-  let ticking = false;
+    const sectionIds = [...sections, "story"];
 
-const handleScroll = () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const scrollY = window.scrollY;
-
-      let current = "";
-
-      // Check story separately
-      const storySection = document.getElementById("story");
-
-      if (storySection) {
-        const top = storySection.offsetTop;
-        const height = storySection.offsetHeight;
-
-        if (
-          scrollY >= top - 150 &&
-          scrollY < top + height - 150
-        ) {
-          current = "about"; // highlight About when inside Story
-        }
-      }
-
-      // Check normal sections
-      sections.forEach((id) => {
-        const section = document.getElementById(id);
-
-        if (section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-
-          if (
-            scrollY >= top - 150 &&
-            scrollY < top + height - 150
-          ) {
-            current = id;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const activeId = id === "story" ? "about" : id;
+            setActive(activeId);
+            const hash = `#${activeId}`;
+            if (window.location.hash !== hash) {
+              window.history.replaceState({}, "", `/${hash}`);
+            }
           }
-        }
-      });
+        });
+      },
+      { rootMargin: "-20% 0px -70% 0px", threshold: 0 }
+    );
 
-   if (current) {
-  setActive(current);
-
-  if (window.location.hash !== `#${current}`) {
-    window.history.replaceState({}, "", `/#${current}`);
-  }
-} else if (location.pathname === "/careers") {
-  setActive("careers");
-}
-
-      ticking = false;
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
 
-    ticking = true;
-  }
-};
-
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+    return () => observer.disconnect();
+  }, []);
 
 
 

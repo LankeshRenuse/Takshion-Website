@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import CareerPage from "./pages/CareerPage";
+const CareerPage = lazy(() => import("./pages/CareerPage"));
 
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -91,7 +91,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/careers" element={<CareerPage />} />
+        <Route path="/careers" element={<Suspense fallback={null}><CareerPage /></Suspense>} />
       </Routes>
     </BrowserRouter>
   );

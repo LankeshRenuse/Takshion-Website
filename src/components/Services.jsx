@@ -155,24 +155,37 @@ export default function Services() {
 
   useEffect(() => {
     let animationFrame;
+    let isVisible = false;
+
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => { isVisible = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+
+    if (scrollRef.current) visibilityObserver.observe(scrollRef.current);
 
     const autoScroll = () => {
-      if (!scrollRef.current) return;
-
-      if (!isHovered && !isDragging.current && !isButtonScrolling.current) {
+      if (
+        isVisible &&
+        scrollRef.current &&
+        !isHovered &&
+        !isDragging.current &&
+        !isButtonScrolling.current
+      ) {
         scrollRef.current.scrollLeft += 0.90;
-
         if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
           scrollRef.current.scrollLeft = 0;
         }
       }
-
       animationFrame = requestAnimationFrame(autoScroll);
     };
 
     animationFrame = requestAnimationFrame(autoScroll);
 
-    return () => cancelAnimationFrame(animationFrame);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      visibilityObserver.disconnect();
+    };
   }, [isHovered]);
 
   const scroll = (direction) => {
