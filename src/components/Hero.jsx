@@ -186,7 +186,7 @@ const slides = [
   },
 
   {
-    title: "AIML SOLUTIONS",
+    title: "AI ML SOLUTIONS",
     subtitle:
       "We build AI-powered systems that transform raw data into actionable insights through deep learning, intelligent algorithms, and real-time analytics.",
     image: "/img/AI-ML.webp",
