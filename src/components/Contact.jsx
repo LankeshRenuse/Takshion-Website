@@ -271,7 +271,7 @@ export default function Contact() {
       variants={leftItemVariants}
       className="text-lg md:text-xl font-semibold text-white"
     >
-      Takshion Pvt. Ltd.
+      Takshion DeepTech Pvt. Ltd.
     </motion.h3>
 
     <motion.p

@@ -330,7 +330,7 @@ export default function Hero() {
     className="block uppercase text-sm font-semibold tracking-[2px]"
     style={{ color: "rgba(92, 252, 0, 0.67)" }}
   >
-    TAKSHION  PVT. LTD.
+    TAKSHION DEEPTECH PVT. LTD.
   </span>
 </div>
           <AnimatePresence mode="wait">
