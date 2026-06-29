@@ -5,6 +5,10 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useLocation } from "react-router-dom";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 const sections = [
   "home",
   "about",
@@ -221,8 +225,11 @@ window.history.replaceState({}, "", `/#${id}`);
  <div className="flex items-center gap-2">
   <a href="/" className="z-50 relative">
   <img
-    src="/img/Takshion-logo.webp"
+    src={responsiveSrc("/img/Takshion-logo.webp", 256)}
+    srcSet={responsiveSrcSet("/img/Takshion-logo.webp")}
+    sizes="96px"
     alt="logo"
+    decoding="async"
     className="h-16 w-auto object-contain scale-[1.33] -translate-y-1.5"
   />
 </a>

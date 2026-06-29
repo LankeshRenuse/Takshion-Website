@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 export default function Story() {
   // --- ANIMATION VARIANTS ---
   const containerVariants = {
@@ -59,7 +63,11 @@ export default function Story() {
             >
               <motion.img
                 src="/img/story.webp"
+                srcSet={responsiveSrcSet("/img/story.webp")}
+                sizes="(max-width: 768px) 92vw, 50vw"
                 alt="Story"
+                loading="lazy"
+                decoding="async"
                 className="w-full max-w-full md:max-w-full h-auto object-contain rounded-2xl"
                 // Inner image scales down slightly as it comes in to create camera depth
                 initial={{ scale: 1.1 }}

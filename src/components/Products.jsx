@@ -4,6 +4,10 @@
   import { AnimatePresence, motion } from "framer-motion";
   import { ArrowLeft, ArrowRight, CheckCircle2, X } from "lucide-react";
 
+  const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+  const responsiveSrcSet = (src) =>
+    `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
   const products = [
   
     {
@@ -112,7 +116,7 @@
     },
   };
 
-  function ProductMedia({ item, className = "" }) {
+  function ProductMedia({ item, className = "", loading = "lazy", sizes = "(max-width: 640px) 85vw, 410px" }) {
     if (item.isVideo) {
       return (
         <video
@@ -128,7 +132,17 @@
       );
     }
 
-    return <img src={item.media} alt={item.title} className={className} />;
+    return (
+      <img
+        src={item.media}
+        srcSet={responsiveSrcSet(item.media)}
+        sizes={sizes}
+        alt={item.title}
+        loading={loading}
+        decoding="async"
+        className={className}
+      />
+    );
   }
 
   export default function Products() {
@@ -211,7 +225,7 @@
           </h2>
          <p className="mx-auto mt-5 max-w-3xl text-sm md:text-base leading-7 text-white/62 text-justify md:text-center">
             Explore Takshion autonomous platforms across air,  agriculture,
-            maritime, and underwater operations. Drag the row, hover to pause, or
+            maritime, and underwater operations. click to 
             open a product for full details.
           </p>
         </div>
@@ -251,6 +265,7 @@
               >
                 <ProductMedia
                   item={product}
+                  loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover brightness-[0.95] transition-transform duration-700 group-hover:scale-110 "
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
@@ -306,6 +321,8 @@
                 <div className="relative h-[300px] md:h-full">
                   <ProductMedia
                     item={selectedProduct}
+                    loading="eager"
+                    sizes="(max-width: 768px) 100vw, 520px"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/55" />

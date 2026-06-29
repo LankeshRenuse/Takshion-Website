@@ -3,6 +3,10 @@
 import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 const services = [
   {
     title: "DRONE DEVELOPMENT",
@@ -93,7 +97,11 @@ const Card = ({ title, desc, features, image }) => {
 <div className="absolute inset-0">
   <img
     src={image}
+    srcSet={responsiveSrcSet(image)}
+    sizes="(max-width: 640px) 350px, 420px"
     alt={title}
+    loading="lazy"
+    decoding="async"
     className="
       w-full
       h-full

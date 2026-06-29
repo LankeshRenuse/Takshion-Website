@@ -18,6 +18,10 @@ import ParticleBackground from "./components/ParticleBackground";
 import ScrollTopButton from "./components/ScrollTopButton";
 import Products from "./components/Products";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 function HomePage() {
   // Always start from the top on page load
 useEffect(() => {
@@ -48,8 +52,12 @@ useEffect(() => {
     <div className="text-white relative">
       {/* Background Logo */}
       <img
-        src="/img/Takshion-logo.webp"
+        src={responsiveSrc("/img/Takshion-logo.webp", 256)}
+        srcSet={responsiveSrcSet("/img/Takshion-logo.webp")}
+        sizes="(max-width: 768px) 50vw, 500px"
         alt="Background Logo"
+        loading="lazy"
+        decoding="async"
         className="bg-logo"
       />
 

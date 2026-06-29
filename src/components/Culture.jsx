@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 export default function Culture() {
   // --- TEXT ANIMATION VARIANTS ---
   const containerVariants = {
@@ -209,7 +213,11 @@ export default function Culture() {
             >
               <motion.img
                 src="/img/culture.webp"
+                srcSet={responsiveSrcSet("/img/culture.webp")}
+                sizes="(max-width: 768px) 92vw, 50vw"
                 alt="Culture"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover"
                 // Inner image scales down slightly as it comes in to create camera depth
                 initial={{ scale: 1.1 }}

@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 export default function Mission() {
   // --- TEXT ANIMATION VARIANTS ---
   const containerVariants = {
@@ -49,7 +53,11 @@ export default function Mission() {
             >
               <motion.img
                 src="/img/mission.webp"
+                srcSet={responsiveSrcSet("/img/mission.webp")}
+                sizes="(max-width: 768px) 92vw, 50vw"
                 alt="Mission"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover"
                 initial={{ scale: 1.1 }}
                 whileInView={{ scale: 1 }}

@@ -20,6 +20,11 @@ import {
   Camera,
   Activity,
 } from "lucide-react";
+
+const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
+const responsiveSrcSet = (src) =>
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+
 const clampText = (text, maxLength = 160) => {
   return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
 };
@@ -305,6 +310,8 @@ export default function Hero() {
             ) : (
               <img
   src={slide.bg || slide.image}
+  srcSet={responsiveSrcSet(slide.bg || slide.image)}
+  sizes="100vw"
   alt=""
   loading="lazy"
   decoding="async"
@@ -451,6 +458,8 @@ export default function Hero() {
                 ) : (
                 <img
     src={slide.image}
+    srcSet={responsiveSrcSet(slide.image)}
+    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 70vw, 580px"
     alt={slide.title}
     loading="eager"
     fetchPriority="high"
