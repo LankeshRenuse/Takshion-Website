@@ -6,11 +6,22 @@ export default function ParticleBackground() {
   const animationRef = useRef(null);
 
   useEffect(() => {
+    let idleId;
+    let timeoutId;
+    let mounted = false;
+    let cancelled = false;
+
+    const shouldSkip =
+      window.matchMedia("(max-width: 640px)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (shouldSkip) {
+      return undefined;
+    }
 
     let canvas, ctx;
     let width, height, dpr;
     let particles = [];
-
     let mouse = {
       x: window.innerWidth / 2,
       y: window.innerHeight / 2
@@ -21,14 +32,13 @@ export default function ParticleBackground() {
       mouse.y = e.clientY;
     };
 
-    window.addEventListener("mousemove", moveMouse);
-
     // =========================
     // CREATE PARTICLES
     // =========================
     const createParticles = () => {
 
-      if (canvasRef.current) return;
+      if (cancelled || canvasRef.current || mounted) return;
+      mounted = true;
 
       canvas = document.createElement("canvas");
       ctx = canvas.getContext("2d");
@@ -48,6 +58,8 @@ export default function ParticleBackground() {
 
       canvasRef.current = canvas;
 
+      window.addEventListener("mousemove", moveMouse);
+
       init();
       animate();
     };
@@ -56,6 +68,10 @@ export default function ParticleBackground() {
     // DESTROY
     // =========================
     const destroyParticles = () => {
+
+      window.removeEventListener("mousemove", moveMouse);
+
+      mounted = false;
 
       if (!canvasRef.current) return;
 
@@ -86,7 +102,7 @@ export default function ParticleBackground() {
 
       ctx.scale(dpr, dpr);
 
-      const count = 120;
+      const count = 72;
 
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * width,
@@ -222,7 +238,16 @@ export default function ParticleBackground() {
       }
     };
 
-    handleResize();
+    const start = () => {
+      if (cancelled) return;
+      handleResize();
+    };
+
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(start, { timeout: 1400 });
+    } else {
+      timeoutId = window.setTimeout(start, 450);
+    }
 
     window.addEventListener(
       "resize",
@@ -231,16 +256,20 @@ export default function ParticleBackground() {
 
     return () => {
 
+      cancelled = true;
       destroyParticles();
+
+      if (idleId && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleId);
+      }
+
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
 
       window.removeEventListener(
         "resize",
         handleResize
-      );
-
-      window.removeEventListener(
-        "mousemove",
-        moveMouse
       );
     };
 

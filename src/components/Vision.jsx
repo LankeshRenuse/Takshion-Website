@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
 const responsiveSrcSet = (src) =>
-  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
 
 export default function Vision() {
   // --- TEXT ANIMATION VARIANTS ---

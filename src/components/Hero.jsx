@@ -23,7 +23,7 @@ import {
 
 const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
 const responsiveSrcSet = (src) =>
-  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
 
 const clampText = (text, maxLength = 160) => {
   return text.length > maxLength ? text.slice(0, maxLength - 3) + "..." : text;
@@ -297,18 +297,7 @@ export default function Hero() {
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            {slide.isVideo ? (
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover object-center scale-105 blur-sm opacity-30"
-              >
-                <source src={slide.bg || slide.image} type="video/mp4" />
-              </video>
-            ) : (
-              <img
+            <img
   src={slide.bg || slide.image}
   srcSet={responsiveSrcSet(slide.bg || slide.image)}
   sizes="100vw"
@@ -318,7 +307,6 @@ export default function Hero() {
   fetchPriority="low"
   className="w-full h-full object-cover object-center scale-105 blur-sm opacity-40"
 />
-            )}
             <div className="absolute inset-0 bg-gradient-to-b from-[#010712]/40 via-black/40 to-black" />
           </motion.div>
         </AnimatePresence>
@@ -337,7 +325,7 @@ export default function Hero() {
     className="block uppercase text-sm font-semibold tracking-[2px]"
     style={{ color: "rgba(92, 252, 0, 0.67)" }}
   >
-    TAKSHION  PVT. LTD.
+    TAKSHION DEEPTECH PVT. LTD.
   </span>
 </div>
           <AnimatePresence mode="wait">
@@ -445,17 +433,6 @@ export default function Hero() {
 
               {/* FRAME */}
               <div className="relative md:-mt-10 w-full max-w-[570px] lg:max-w-[500px] xl:max-w-[540px] 2xl:max-w-[580px] overflow-hidden rounded-[20px] border border-white/10 backdrop-blur-xl bg-white/5 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-                {slide.isVideo ? (
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="h-[300px] sm:h-[360px] md:h-[410px] lg:h-[360px] xl:h-[390px] 2xl:h-[420px] w-full object-cover object-center"
-                  >
-                    <source src={slide.image} type="video/mp4" />
-                  </video>
-                ) : (
                 <img
     src={slide.image}
     srcSet={responsiveSrcSet(slide.image)}
@@ -466,13 +443,12 @@ export default function Hero() {
     decoding="async"
                     className="h-[300px] sm:h-[360px] md:h-[410px] lg:h-[360px] xl:h-[390px] 2xl:h-[420px] w-full object-cover object-center"
                   />
-                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
               </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Slider Dots Below Image */}
+        
     {/* Slider Dots Below Image */}
 <div className="flex justify-center gap-3 mt-5 sm:mt-6 w-full max-w-[570px] lg:max-w-[500px] xl:max-w-[540px] 2xl:max-w-[580px] mx-auto">
             {slides.map((_, index) => (

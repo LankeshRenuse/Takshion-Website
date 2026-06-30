@@ -6,7 +6,7 @@
 
   const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
   const responsiveSrcSet = (src) =>
-    `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+    `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
 
   const products = [
   
@@ -117,21 +117,6 @@
   };
 
   function ProductMedia({ item, className = "", loading = "lazy", sizes = "(max-width: 640px) 85vw, 410px" }) {
-    if (item.isVideo) {
-      return (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={item.poster}
-          className={className}
-        >
-          <source src={item.media} type="video/mp4" />
-        </video>
-      );
-    }
-
     return (
       <img
         src={item.media}

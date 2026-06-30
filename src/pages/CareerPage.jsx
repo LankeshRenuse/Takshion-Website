@@ -222,8 +222,13 @@ const [loading, setLoading] = useState(false);
 
         <div className="min-h-screen text-white relative overflow-hidden pt-20">
           <img
-            src="/img/Takshion-logo.webp"
-            alt="Background Logo"
+            src="/img/Takshion-logo-256.webp"
+            srcSet="/img/Takshion-logo-256.webp 256w, /img/Takshion-logo-480.webp 480w, /img/Takshion-logo-768.webp 768w"
+            sizes="(max-width: 768px) 45vw, 500px"
+            alt=""
+            loading="eager"
+            decoding="async"
+            fetchPriority="low"
             className="bg-logo"
           />
 

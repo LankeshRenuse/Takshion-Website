@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
 const responsiveSrcSet = (src) =>
-  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w, ${src} 1280w`;
+  `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
 
 export default function About() {
   const accentColor = "rgba(92,252,0,0.67)";
@@ -40,7 +40,7 @@ export default function About() {
       id="about"
       className="py-12 px-4 scroll-mt-[60px]"
     >
-      <div className=" max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
         {/* LEFT CARD */}
         <div className=" w-full  lg:w-1/2">
@@ -114,7 +114,7 @@ export default function About() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="w-full md:w-1/2 flex justify-center relative overflow-hidden md:overflow-visible">
+        <div className="w-full lg:w-1/2 flex justify-center relative overflow-hidden md:overflow-visible">
 
           {/* Glow */}
           <div
@@ -167,7 +167,7 @@ export default function About() {
               <motion.img
                 src="/img/about.webp"
                 srcSet={responsiveSrcSet("/img/about.webp")}
-                sizes="(max-width: 768px) 92vw, 50vw"
+                sizes="(max-width: 1024px) 92vw, 50vw"
                 alt="About Takshion"
                 loading="lazy"
                 decoding="async"
