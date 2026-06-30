@@ -134,7 +134,7 @@ const handleNavClick = (event, id) => {
   if (location.pathname === "/careers") {
     if (id === "careers") {
       setActive("careers");
-navigate("/careers");
+      navigate("/careers");
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -143,11 +143,12 @@ navigate("/careers");
       return;
     }
 
-    navigate("/", {
-      state: {
-        scrollTo: id,
-      },
-    });
+    if (id === "home") {
+      navigate("/");
+      return;
+    }
+
+    navigate(`/#${id}`);
 
     return;
   }

@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import CareerPage from "./pages/CareerPage";
@@ -25,10 +25,15 @@ const responsiveSrcSet = (src) =>
 const brandSrcSet =
   "/img/Takshion-logo-256.webp 256w, /img/Takshion-logo-480.webp 480w, /img/Takshion-logo-768.webp 768w";
 
-function useDeferredMount() {
-  const [ready, setReady] = useState(false);
+function useDeferredMount(forceImmediate = false) {
+  const [ready, setReady] = useState(() => forceImmediate);
 
   useEffect(() => {
+    if (forceImmediate) {
+      setReady(true);
+      return undefined;
+    }
+
     let idleId;
     let timeoutId;
     let cancelled = false;
@@ -66,15 +71,18 @@ function useDeferredMount() {
 
       window.removeEventListener("load", start);
     };
-  }, []);
+  }, [forceImmediate]);
 
   return ready;
 }
 
 function HomePage() {
-  const showDeferredContent = useDeferredMount();
   const location = useLocation();
   const navigate = useNavigate();
+  const initialTarget = location.state?.scrollTo || location.hash?.substring(1);
+  const showDeferredContent = useDeferredMount(Boolean(initialTarget));
+  const [pageVisible, setPageVisible] = useState(() => !initialTarget);
+  const scrollFrameRef = useRef(null);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -91,44 +99,85 @@ function HomePage() {
   };
 
   // Always start from the top on page load
-  useEffect(() => {
+  useLayoutEffect(() => {
     if ("scrollRestoration" in window.history) {
       window.history.scrollRestoration = "manual";
     }
-    const hash = location.hash;
+    const target = initialTarget;
 
-    if (hash) {
-      requestAnimationFrame(() => {
-        scrollToSection(hash.substring(1));
-      });
-    } else {
+    if (scrollFrameRef.current) {
+      cancelAnimationFrame(scrollFrameRef.current);
+      scrollFrameRef.current = null;
+    }
+
+    if (!showDeferredContent) {
+      if (!target) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "instant",
+        });
+        setPageVisible(true);
+      }
+
+      return;
+    }
+
+    if (!target) {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: "instant",
       });
+      setPageVisible(true);
+      return;
     }
-  }, [location.hash]);
 
-  useEffect(() => {
-    if (!showDeferredContent) return;
+    let attempts = 0;
+    const maxAttempts = 120;
 
-    const target = location.state?.scrollTo || location.hash?.substring(1);
+    const finish = () => {
+      setPageVisible(true);
 
-    if (!target) return;
-
-    requestAnimationFrame(() => {
-      if (scrollToSection(target) && location.state?.scrollTo) {
+      if (location.state?.scrollTo) {
         navigate(location.pathname, {
           replace: true,
           state: null,
         });
       }
-    });
-  }, [showDeferredContent, location.hash, location.pathname, location.state, navigate]);
+    };
+
+    const tryScroll = () => {
+      attempts += 1;
+
+      if (scrollToSection(target)) {
+        finish();
+        return;
+      }
+
+      if (attempts >= maxAttempts) {
+        finish();
+        return;
+      }
+
+      scrollFrameRef.current = requestAnimationFrame(tryScroll);
+    };
+
+    scrollFrameRef.current = requestAnimationFrame(tryScroll);
+
+    return () => {
+      if (scrollFrameRef.current) {
+        cancelAnimationFrame(scrollFrameRef.current);
+        scrollFrameRef.current = null;
+      }
+    };
+  }, [initialTarget, showDeferredContent, location.pathname, location.state, navigate]);
 
   return (
-    <div className="text-white relative">
+    <div
+      className="text-white relative"
+      style={{ visibility: pageVisible ? "visible" : "hidden" }}
+    >
       {/* Background Logo */}
       <img
         src="/img/Takshion-logo-256.webp"
