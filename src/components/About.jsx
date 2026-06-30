@@ -38,7 +38,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-12 px-4 scroll-mt-[60px]"
+      className="py-12 px-4 scroll-mt-[10px]"
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
