@@ -102,7 +102,7 @@ export default function ParticleBackground() {
 
       ctx.scale(dpr, dpr);
 
-      const count = 72;
+      const count = 50;
 
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * width,
