@@ -29,7 +29,7 @@ const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
 const responsiveSrcSet = (src) =>
   `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
 const brandSrcSet =
-  "/img/Takshion-logo-256.webp 256w, /img/Takshion-logo-480.webp 480w, /img/Takshion-logo-768.webp 768w";
+  "/img/Takshion-logo.png 256w, /img/Takshion-logo.png 480w, /img/Takshion-logo.png 768w";
 
 function useDeferredMount(forceImmediate = false) {
   const [ready, setReady] = useState(() => forceImmediate);
@@ -186,7 +186,7 @@ function HomePage() {
     >
       {/* Background Logo */}
       <img
-        src="/img/Takshion-logo-256.webp"
+        src="/img/Takshion-logo.png"
         srcSet={brandSrcSet}
         sizes="(max-width: 768px) 45vw, 500px"
         alt=""
