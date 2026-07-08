@@ -8,8 +8,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 const responsiveSrc = (src, width) => src.replace(/\.[^.]+$/, `-${width}.webp`);
 const responsiveSrcSet = (src) =>
   `${responsiveSrc(src, 480)} 480w, ${responsiveSrc(src, 768)} 768w`;
-const brandSrcSet =
-  "/img/Takshion-logo.png 256w, /img/Takshion-logo.png 480w, /img/Takshion-logo.png 768w";
 
 const sections = [
   "home",
@@ -228,8 +226,7 @@ window.history.replaceState({}, "", `/#${id}`);
  <div className="flex items-center gap-2">
   <a href="/" className="z-50 relative">
   <img
-    src="/img/Takshion-logo.png"
-    srcSet={brandSrcSet}
+    src="/img/Takshion-logo-navbar.png"
     sizes="96px"
     alt="logo"
     loading="eager"
