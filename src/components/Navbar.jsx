@@ -436,26 +436,32 @@ window.history.replaceState({}, "", `/#${id}`);
     return (
       <div key={id} className="overflow-hidden">
         {/* About */}
-        <div className="flex items-center justify-between gap-2 py-3 uppercase tracking-wider transition-colors">
-          <motion.a
-            variants={linkVars}
-            href="/"
+        <motion.div
+          variants={linkVars}
+          className={`w-full flex items-center justify-between py-3 uppercase tracking-wider transition-colors ${
+            active === "about"
+              ? "text-[rgba(92,252,0,0.67)] font-bold"
+              : "text-white/80"
+          }`}
+        >
+          <motion.button
+            type="button"
             onClick={(event) => handleNavClick(event, "about")}
-            className={`flex-1 text-left transition-colors ${
-              active === "about"
-                ? "text-[rgba(92,252,0,0.67)] font-bold"
-                : "text-white/80 hover:text-white"
-            }`}
+            className="flex-1 text-left"
           >
             About
-          </motion.a>
+          </motion.button>
 
           <button
             type="button"
-            onClick={() => setAboutOpen(!aboutOpen)}
-            className="shrink-0 p-1 text-white/80"
-            aria-label="Toggle About submenu"
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              setAboutOpen((s) => !s);
+            }}
+            className="flex items-center justify-center pl-3"
             aria-expanded={aboutOpen}
+            aria-controls="about-dropdown"
           >
             <ChevronDown
               className={`w-4 h-4 transition-transform duration-300 ${
@@ -463,7 +469,7 @@ window.history.replaceState({}, "", `/#${id}`);
               }`}
             />
           </button>
-        </div>
+        </motion.div>
 
         {/* Our Story */}
         <AnimatePresence>

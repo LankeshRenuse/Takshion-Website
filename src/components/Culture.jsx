@@ -56,7 +56,7 @@ export default function Culture() {
 
               <motion.p
                 variants={lineVariants}
-              className="text-gray-300 mb-5 md:mb-6 leading-relaxed text-sm md:text-base lg:text-lg text-left text-balance"
+              className="text-gray-300 mb-5 md:mb-6 leading-relaxed text-sm md:text-base lg:text-lg text-justify"
               >
                 At <b className="text-white">Takshion,</b> we believe great
                 technology is built by passionate people. We foster a culture
@@ -81,7 +81,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                  <span className="text-balance">
+                  <span className="text-justify">
                       {" "}
                       <b className="text-white">Passion:</b> Taking ownership
                       and caring deeply about our work.{" "}
@@ -96,7 +96,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                    <span className="text-balance">
+                    <span className="text-justify">
                       {" "}
                       <b className="text-white">Innovation:</b> Turning ideas
                       into practical solutions that create impact.{" "}
@@ -111,7 +111,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                   <span className="text-balance">
+                   <span className="text-justify">
                       {" "}
                       <b className="text-white">Consistency:</b> Delivering
                       excellence through discipline, reliability, and continuous
@@ -127,7 +127,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                    <span className="text-balance">
+                    <span className="text-justify">
                       {" "}
                       <b className="text-white">Collaboration:</b> Combining
                       diverse perspectives to solve complex challenges.{" "}
@@ -142,7 +142,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                    <span className="text-balance">
+                    <span className="text-justify">
                       {" "}
                       <b className="text-white">Growth:</b> Creating
                       opportunities to learn, lead, and push boundaries.{" "}
@@ -157,7 +157,7 @@ export default function Culture() {
                       {" "}
                       ▸{" "}
                     </span>{" "}
-                    <span className="text-balance">
+                    <span className="text-justify">
                       {" "}
                       <b className="text-white">Integrity:</b> Building trust
                       through transparency, accountability, and respect.{" "}
@@ -168,7 +168,7 @@ export default function Culture() {
 
               <motion.p
                 variants={lineVariants}
-               className="text-gray-400 mt-5 md:mt-6 text-xs md:text-sm leading-relaxed text-left text-balance"
+               className="text-gray-400 mt-5 md:mt-6 text-xs md:text-sm leading-relaxed text-justify"
               >
                 At Takshion, every challenge is an opportunity to learn, every
                 idea is worth exploring, and every success is achieved together.
