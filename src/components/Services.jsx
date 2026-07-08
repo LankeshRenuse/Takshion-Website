@@ -210,7 +210,7 @@ export default function Services() {
         <span className="text-[rgba(92,252,0,0.67)]">SERVICES</span>
       </h2>
 
-      <p className="text-gray-400 max-w-4xl mx-auto mb-10 text-justify md:text-center">
+      <p className="text-gray-400 max-w-4xl mx-auto mb-10 text-left text-balance md:text-center">
   We deliver cutting-edge solutions across AI, Robotics, UAV Systems, IoT,
   Enterprise Software, and Security Platforms.
 </p>

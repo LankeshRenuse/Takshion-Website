@@ -100,7 +100,7 @@ export default function Story() {
             </motion.h2>
 
             {/* Changed to motion.ul to maintain the animation chain */}
-            <motion.ul className="space-y-4 text-gray-300 text-justify">
+            <motion.ul className="space-y-4 text-gray-300 text-left text-balance">
               {/* Added items-start and mt-1 for perfect multi-line alignment */}
               <motion.li
                 variants={lineVariants}
@@ -109,7 +109,7 @@ export default function Story() {
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">
                   ▸
                 </span>
-                <span className="text-justify leading-7">
+                <span className="text-balance leading-7">
                  Born from the engineering legacy of Sveltoz Solutions Pvt. Ltd., Takshion combines startup agility with 17+ years of proven technology expertise.
                 </span>
               </motion.li>
@@ -121,7 +121,7 @@ export default function Story() {
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">
                   ▸
                 </span>
-                <span className="text-justify leading-7">
+                <span className="text-balance leading-7">
                   We design and develop intelligent UAVs, UGVs, and UUVs, powered by AI, Computer Vision, IoT, Deep Learning, and Generative AI.
                 </span>
               </motion.li>
@@ -133,7 +133,7 @@ export default function Story() {
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">
                   ▸
                 </span>
-               <span className="text-justify leading-7">
+               <span className="text-balance leading-7">
                   From concept to deployment, our solutions enable smarter automation, greater efficiency, and real-world impact.
                 </span>
               </motion.li>
@@ -145,7 +145,7 @@ export default function Story() {
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">
                   ▸
                 </span>
-               <span className="text-justify leading-7">
+               <span className="text-balance leading-7">
                   Every innovation reflects our commitment to reliability, performance, and technological advancement.
                 </span>
               </motion.li>
@@ -157,7 +157,7 @@ export default function Story() {
                 <span className="text-[rgba(92,252,0,0.67)] text-3xl mt-1">
                   ▸
                 </span>
-                <span className="text-justify leading-7">
+                <span className="text-balance leading-7">
                   Proudly backed by the industrial legacy of Sveltoz Solutions Pvt. Ltd.
                 </span>
               </motion.li>

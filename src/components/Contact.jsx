@@ -276,7 +276,7 @@ export default function Contact() {
 
     <motion.p
       variants={leftItemVariants}
-     className="text-gray-300 mt-2 leading-7 max-w-sm mx-auto md:mx-0 text-center md:text-justify"
+     className="text-gray-300 mt-2 leading-7 max-w-sm mx-auto md:mx-0 text-center md:text-left md:text-balance"
     >
       1004, Kingsbury, Charholi Khurd, <br></br>
       Taluka Khed, District Pune,<br></br>
