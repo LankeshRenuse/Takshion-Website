@@ -79,7 +79,8 @@ export default function Mission() {
     viewport={{ once: true, amount: 0.2 }}
   >
     <div
-        className="h-full overflow-y-auto p-8 hide-scrollbar text-justify"
+       
+  className="h-full overflow-y-auto pl-2 pr-2 py-2 md:p-8  text-left md:text-justify"
 
       style={{
         scrollbarWidth: "thin",
@@ -95,9 +96,9 @@ export default function Mission() {
 
      <motion.p
   variants={lineVariants}
-  className="text-gray-300 mb-5 leading-8 text-justify"
+  className="text-gray-300 mb-5 leading-7 md:leading-8 tracking-[0.01em] text-left md:text-justify"
 >
-        We build technology that solves problems. By combining{" "}
+        We build technology that solves real-world problems. By combining{" "}
         <span className="text-[rgba(92,252,0,0.67)]">
           AI, Robotics, Drones, and Intelligent Automation
         </span>
@@ -106,7 +107,7 @@ export default function Mission() {
 
      <motion.p
   variants={lineVariants}
-  className="text-gray-300 mb-6 leading-8 text-justify"
+  className="text-gray-300 mb-6 leading-7 md:leading-8 tracking-[0.01em] text-left md:text-justify"
 >
         We create systems that help people work smarter, safer, and more
         efficiently.
@@ -115,35 +116,35 @@ export default function Mission() {
       <ul className="space-y-4 text-gray-300 mb-6">
         <motion.li variants={lineVariants} className="flex gap-3">
           <span className="text-[rgba(92,252,0,0.67)] text-3xl">▸</span>
-          <span className="text-justify">
+          <span className="block flex-1 leading-7 tracking-[0.01em] text-left md:text-justify">
             Build reliable and practical autonomous solutions
           </span>
         </motion.li>
 
         <motion.li variants={lineVariants} className="flex gap-3">
           <span className="text-[rgba(92,252,0,0.67)] text-3xl">▸</span>
-          <span className="text-justify">
+          <span className="block flex-1 leading-7 tracking-[0.01em] text-left md:text-justify">
             Turn innovative ideas into real-world impact.
           </span>
         </motion.li>
 
         <motion.li variants={lineVariants} className="flex gap-3">
           <span className="text-[rgba(92,252,0,0.67)] text-3xl">▸</span>
-          <span className="text-justify">
+          <span className="block flex-1 leading-7 tracking-[0.01em] text-left md:text-justify">
             Maintain the highest standards of engineering and quality.
           </span>
         </motion.li>
 
         <motion.li variants={lineVariants} className="flex gap-3">
           <span className="text-[rgba(92,252,0,0.67)] text-3xl">▸</span>
-          <span className="text-justify">
+          <span className="block flex-1 leading-7 tracking-[0.01em] text-left md:text-justify">
             Continuously learn, improve, and push technological boundaries.
           </span>
         </motion.li>
 
         <motion.li variants={lineVariants} className="flex gap-3">
           <span className="text-[rgba(92,252,0,0.67)] text-3xl">▸</span>
-          <span className="text-justify">
+          <span className="block flex-1 leading-7 tracking-[0.01em] text-left md:text-justify">
             Develop next-generation autonomous systems for critical operations
             and demanding environments.
           </span>
@@ -152,7 +153,7 @@ export default function Mission() {
 
       <motion.p
   variants={lineVariants}
-  className="text-gray-400 leading-8 text-justify"
+  className="text-gray-400 leading-7 md:leading-8 tracking-[0.01em] text-left md:text-justify"
 >
         Our mission is simple: to create intelligent systems that people can
         trust today and technologies that will power the strategic challenges
