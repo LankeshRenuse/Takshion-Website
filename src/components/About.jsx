@@ -78,7 +78,7 @@ export default function About() {
 
            <motion.p
   variants={lineVariants}
-  className="text-gray-300 leading-7 mb-5 text-base md:text-lg tracking-[0.01em] text-left md:text-justify"
+  className="text-gray-300 leading-7 mb-5 text-base md:text-lg tracking-[0.01em] text-left lg:text-justify"
 >
   The innovative drones and robotics startup backed by
   <span style={{ color: accentColor }}>
@@ -89,7 +89,7 @@ export default function About() {
 
 <motion.p
   variants={lineVariants}
-  className="text-gray-300 leading-7 mb-5 text-base md:text-lg tracking-[0.01em] text-left md:text-justify"
+  className="text-gray-300 leading-7 mb-5 text-base md:text-lg tracking-[0.01em] text-left lg:text-justify"
 >
   <span className="text-white font-semibold">
     Takshion
@@ -106,7 +106,7 @@ export default function About() {
 
 <motion.p
   variants={lineVariants}
-  className="text-white font-semibold text-base md:text-lg tracking-[0.01em] text-left md:text-justify"
+  className="text-white font-semibold text-base md:text-lg tracking-[0.01em] text-left lg:text-justify"
 >
   A subsidiary alliance of Sveltoz Solutions Pvt. Ltd.
 </motion.p>

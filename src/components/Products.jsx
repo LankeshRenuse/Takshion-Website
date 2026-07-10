@@ -320,7 +320,7 @@
                   <h3 className="text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
                     {selectedProduct.title}
                   </h3>
-                 <p className="mt-3 text-sm leading-7 tracking-[0.01em] text-white/72 sm:mt-5 sm:text-base sm:leading-8 text-left md:text-justify">
+                 <p className="mt-3 text-sm leading-7 tracking-[0.01em] text-white/72 sm:mt-5 sm:text-base sm:leading-8 text-left lg:text-justify">
   {selectedProduct.desc}
 </p>
                   <div className="mt-5 space-y-3 sm:mt-8 sm:space-y-4">

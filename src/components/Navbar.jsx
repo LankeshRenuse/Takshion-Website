@@ -447,7 +447,7 @@ window.history.replaceState({}, "", `/#${id}`);
           <motion.button
             type="button"
             onClick={(event) => handleNavClick(event, "about")}
-            className="flex-1 text-left"
+            className="flex-1 text-left uppercase"
           >
             About
           </motion.button>
