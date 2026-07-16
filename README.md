@@ -1,4 +1,4 @@
-Takshion Mechatronics Private Limited
+Takshion DeepTech Private Limited
 
 Innovating the future through Artificial Intelligence, Robotics, Drone Technology, Computer Vision, 
 Industrial Automation, and Intelligent Surveillance Systems.
@@ -30,5 +30,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-
