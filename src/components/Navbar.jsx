@@ -245,7 +245,7 @@ window.history.replaceState({}, "", `/#${id}`);
     <div>
       An Indian{" "}
       <span className="text-[rgba(92,252,0,0.67)]">
-        Deep-Tech
+        DeepTech
       </span>{" "}
       &
     </div>
