@@ -1,4 +1,4 @@
-Takshion DeepTech Private Limited
+*Takshion DeepTech Private Limited*
 
 Innovating the future through Artificial Intelligence, Robotics, Drone Technology, Computer Vision, 
 Industrial Automation, and Intelligent Surveillance Systems.
